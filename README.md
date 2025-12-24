@@ -13,6 +13,18 @@ A Python tool for extracting Solidity smart contract metadata from bytecode, inc
 
 ## Installation
 
+### Using pipx (Recommended)
+
+Install directly from GitHub:
+
+```bash
+pipx install git+https://github.com/v4resk/SolMeta
+```
+
+This will make the `solmeta` command available globally.
+
+### Manual Installation
+
 ```bash
 # Clone the repository
 git clone https://github.com/v4resk/SolMeta
@@ -24,26 +36,36 @@ source venv/bin/activate  # Linux/Mac
 # venv\Scripts\activate  # Windows
 
 # Install dependencies
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 ## Usage
 
 ### Basic Commands
 
+If installed with pipx:
+
 ```bash
 # Extract from RPC endpoint
-python solmeta.py --rpc http://rpc.example.com --contract 0xContractAddress
+solmeta --rpc http://rpc.example.com --contract 0xContractAddress
 
 # Extract from local bytecode file
-python solmeta.py --file bytecode.txt
+solmeta --file bytecode.txt
 
 # JSON-only output (machine-readable)
-python solmeta.py --rpc http://rpc.example.com --contract 0xContractAddress --json
-python solmeta.py --file bytecode.txt --json
+solmeta --rpc http://rpc.example.com --contract 0xContractAddress --json
+solmeta --file bytecode.txt --json
 
 # Skip IPFS metadata fetch
-python solmeta.py --rpc http://rpc.example.com --contract 0xContractAddress --no-ipfs
+solmeta --rpc http://rpc.example.com --contract 0xContractAddress --no-ipfs
+```
+
+If using manual installation (from venv):
+
+```bash
+# Replace 'solmeta' with 'python solmeta.py' in the above commands
+python solmeta.py --rpc http://rpc.example.com --contract 0xContractAddress
+python solmeta.py --file bytecode.txt
 ```
 
 ### Example Workflow
@@ -53,7 +75,7 @@ python solmeta.py --rpc http://rpc.example.com --contract 0xContractAddress --no
 cast code "0xDAa3Ab82Ce4fc5380AD68C83e198f79f66aAbA04" --rpc-url http://83.136.248.107:31160/ > bytecode.bin
 
 # 2. Extract metadata from file
-python solmeta.py --file bytecode.bin --json | jq
+solmeta --file bytecode.bin --json | jq
 ```
 
 ## Output Format
