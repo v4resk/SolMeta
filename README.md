@@ -33,17 +33,17 @@ pip install -r requirements
 
 ```bash
 # Extract from RPC endpoint
-python extract_metadata.py --rpc http://rpc.example.com --contract 0xContractAddress
+python solmeta.py --rpc http://rpc.example.com --contract 0xContractAddress
 
 # Extract from local bytecode file
-python extract_metadata.py --file bytecode.txt
+python solmeta.py --file bytecode.txt
 
 # JSON-only output (machine-readable)
-python extract_metadata.py --rpc http://rpc.example.com --contract 0xContractAddress --json
-python extract_metadata.py --file bytecode.txt --json
+python solmeta.py --rpc http://rpc.example.com --contract 0xContractAddress --json
+python solmeta.py --file bytecode.txt --json
 
 # Skip IPFS metadata fetch
-python extract_metadata.py --rpc http://rpc.example.com --contract 0xContractAddress --no-ipfs
+python solmeta.py --rpc http://rpc.example.com --contract 0xContractAddress --no-ipfs
 ```
 
 ### Example Workflow
@@ -53,7 +53,7 @@ python extract_metadata.py --rpc http://rpc.example.com --contract 0xContractAdd
 cast code "0xDAa3Ab82Ce4fc5380AD68C83e198f79f66aAbA04" --rpc-url http://83.136.248.107:31160/ > bytecode.bin
 
 # 2. Extract metadata from file
-python extract_metadata.py --file bytecode.bin --json | jq
+python solmeta.py --file bytecode.bin --json | jq
 ```
 
 ## Output Format
