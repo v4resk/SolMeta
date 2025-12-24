@@ -4,12 +4,12 @@ A Python tool for extracting Solidity smart contract metadata from bytecode, inc
 
 ## Features
 
-✅ Extract CBOR-encoded metadata from contract bytecode
-✅ Fetch bytecode from RPC endpoints or local files
-✅ Decode IPFS hashes from metadata
-✅ Retrieve full metadata JSON from IPFS gateways
-✅ JSON-only output mode for scripting and automation
-✅ Supports both direct RPC queries and pre-fetched bytecode
+- Extract CBOR-encoded metadata from contract bytecode
+- Fetch bytecode from RPC endpoints or local files
+- Decode IPFS hashes from metadata
+- Retrieve full metadata JSON from IPFS gateways
+- JSON-only output mode for scripting and automation
+- Supports both direct RPC queries and pre-fetched bytecode
 
 ## Installation
 
